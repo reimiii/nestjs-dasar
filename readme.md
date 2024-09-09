@@ -18,3 +18,5 @@ rekomendasi nya langsung nyebutin data yang di butuhkan di param menggunakan dec
 
 always using request decorator from nestjs
 tapi ada yang perlu di pertanyakan kira kira? si nest ini nerima data nya default nya apa ya? bisa conversi otomatis atau harus bikin sendiri hmmmm
+
+response jg bisa pake express.Response pake @Req() kek biasanya tapi ga di return
