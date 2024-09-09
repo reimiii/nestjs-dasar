@@ -9,3 +9,5 @@ generate module using `nest generate module NAME path`
 Controller declarative menggunakan Annotation/decorator
 
 buat controller `nest generate controller name path`
+
+routing di controller pake decorator di method nya..
