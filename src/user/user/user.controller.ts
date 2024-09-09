@@ -31,10 +31,10 @@ export class UserController {
   }
 
   @Get('/hello-r') // get query params id
-  getQueryRecommend(
+  async getQueryRecommend(
     @Query('name') name: string,
     @Query('location') location: string,
-  ): string {
+  ): Promise<string> {
     return `hello ${name ?? 'Guest'} from ${location || 'ID'}`;
   }
 
