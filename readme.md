@@ -27,3 +27,5 @@ unit test pake jest di satuin di folder pas bikin controller otomatis terbuat
 
 ada kurang nya pake unittest tapi yang di test pake parameter @Req() atau @Req()
 pake `node-mock-http` untuk unit test nya
+
+e2e test integration test, using `supertest` baik lah
