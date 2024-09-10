@@ -35,3 +35,8 @@ ide utamanya katanya supaya object provider bisa di inject sebagai dependency ke
 
 membuat provide buat class dengan decorator @Injectable() semua provider harus di regis
 ke module agar di buat otomatis `nest generate provider name path` klo misal nya mau buat service bisa langsung kayak gini `nest generate service name path`
+
+dependency injection objeck membutuhkan object lain, controller butuh service misal nya.
+ini buat nya pake constructor di controller... klo misal nya mau unit test datapi butuh servicenya di before each nya masukin provider service nya yang mau di pake atau di inject nya
+
+nest jg mendukung property base injection

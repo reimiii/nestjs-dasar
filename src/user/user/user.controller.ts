@@ -11,9 +11,20 @@ import {
   Res,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
+import { UserService } from './user.service';
 
 @Controller('/api/users')
 export class UserController {
+  // @Inject()
+  // @Optional()
+  // private userService: UserService;
+  constructor(private service: UserService) {}
+
+  @Get('/di-hello') // get query name
+  async helloDI(@Query('name') name: string): Promise<string> {
+    return this.service.sayHello(name);
+  }
+
   @Get('/sam-sam')
   @Header('Content-Type', 'application/json')
   @HttpCode(200)
