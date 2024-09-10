@@ -29,3 +29,9 @@ ada kurang nya pake unittest tapi yang di test pake parameter @Req() atau @Req()
 pake `node-mock-http` untuk unit test nya
 
 e2e test integration test, using `supertest` baik lah
+
+provider = service, repository, helper di buat dalam bentuk provider di nest
+ide utamanya katanya supaya object provider bisa di inject sebagai dependency ke object lainnya seperti controller atau provider lain jadi nya ya ini dep injection
+
+membuat provide buat class dengan decorator @Injectable() semua provider harus di regis
+ke module agar di buat otomatis `nest generate provider name path` klo misal nya mau buat service bisa langsung kayak gini `nest generate service name path`
