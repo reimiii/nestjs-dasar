@@ -27,7 +27,7 @@ export class UserController {
   setSomeView(@Query('name') name: string, @Res() response: Response) {
     response.render('index.html', {
       title: 'INI TITLE NYAA',
-      name: 'Skravyy',
+      name: name,
     });
   }
 
