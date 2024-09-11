@@ -58,3 +58,8 @@ alias provider membuat dependency dengan nama yang berbeda untuk object provider
 cocok untuk dependency yang sama untuk nama provider yang berbeda beda untuk nama
 alias yang berbeda dengan class bisa pake @Inject(nameAlias) kalo butuh ngelakuin
 dep injection
+
+
+module reference in nest ModuleRef, bisa di gunakan untk ngambil data provider yang 
+ada di aplikasi bisa bantu pada kasus ga mau DI otomatis misal, mau ngambil dependency 
+tapi pas lagi butuh aja lazy. perlu ngecek manual ada apa engga jadi hati hati..

@@ -11,6 +11,7 @@ import {
   createUserRepository,
   UserRepository,
 } from './user-repository/user-repository';
+import { MemberService } from './member/member.service';
 import * as process from 'node:process';
 
 @Module({
@@ -35,6 +36,7 @@ import * as process from 'node:process';
       useFactory: createUserRepository,
       inject: [Connection],
     },
+    MemberService,
   ],
 })
 export class UserModule {}
