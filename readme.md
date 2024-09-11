@@ -40,3 +40,9 @@ dependency injection objeck membutuhkan object lain, controller butuh service mi
 ini buat nya pake constructor di controller... klo misal nya mau unit test datapi butuh servicenya di before each nya masukin provider service nya yang mau di pake atau di inject nya
 
 nest jg mendukung property base injection
+
+membuat custom provider... sebelum nya pake standar provider...
+
+class provider misal bikin connection provider tapi ada 2 class dan suatu saat penengn pake salah satu nya tampa nge ganti code nya...
+
+generate nya pake `nest generate provider connection user`
