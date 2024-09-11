@@ -50,3 +50,6 @@ generate nya pake `nest generate provider connection user`
 value provider adalah membuat dependency dari value (object) yang sudah ada, misal punya sebuah object dan object tersebut mau di jadikan sebagai dependency provider, kita bisa gunakan value provider
 
 generate nya pake `nest g s mail user` misal aja kita pake library dan ga bisa pake @Injectable()
+
+
+factory provider membuat dependency dengan menyediakan function yang akan di panggil untuk membuat object dependency nya biasa di sebut factory method, jika pada factory method tersebut buth dependency lain kita bisa sebutkan juga dengan menggunakan attribute inject. parameter yang di butuhin di factory method nya...
