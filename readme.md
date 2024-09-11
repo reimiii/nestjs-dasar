@@ -63,3 +63,8 @@ dep injection
 module reference in nest ModuleRef, bisa di gunakan untk ngambil data provider yang 
 ada di aplikasi bisa bantu pada kasus ga mau DI otomatis misal, mau ngambil dependency 
 tapi pas lagi butuh aja lazy. perlu ngecek manual ada apa engga jadi hati hati..
+
+**configuration** seperti value yang dinamis di .env untuk pake fitur configuration
+perlu install library `@nestjs/config` dan perlu regis ConfigModule ke AppModule
+dan seluruh config .env bisa di baca pake class ConfigService, 
+bisa juga di pake di NestAplication misal nya mau dinamik port...
