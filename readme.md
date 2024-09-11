@@ -53,3 +53,8 @@ generate nya pake `nest g s mail user` misal aja kita pake library dan ga bisa p
 
 
 factory provider membuat dependency dengan menyediakan function yang akan di panggil untuk membuat object dependency nya biasa di sebut factory method, jika pada factory method tersebut buth dependency lain kita bisa sebutkan juga dengan menggunakan attribute inject. parameter yang di butuhin di factory method nya...
+
+alias provider membuat dependency dengan nama yang berbeda untuk object provider yang sama
+cocok untuk dependency yang sama untuk nama provider yang berbeda beda untuk nama
+alias yang berbeda dengan class bisa pake @Inject(nameAlias) kalo butuh ngelakuin
+dep injection
