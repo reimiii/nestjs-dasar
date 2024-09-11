@@ -68,3 +68,12 @@ tapi pas lagi butuh aja lazy. perlu ngecek manual ada apa engga jadi hati hati..
 perlu install library `@nestjs/config` dan perlu regis ConfigModule ke AppModule
 dan seluruh config .env bisa di baca pake class ConfigService, 
 bisa juga di pake di NestAplication misal nya mau dinamik port...
+
+
+**shared module** module singleton object, kita bisa melakukan import module pake
+attribute import di module.. kita udh melakukan shared module dengan import UserModule di AppModule
+
+**shared provider** secara default provider ga di ekspose ke luar dari module nya
+misal provider d module A ga bisa di pake di module B, kalo mau mau di shanring harus
+di export di @Module({ export: []) A nya baru bisa di pake di module B atau lainnya
+hanya yang di export saja yang bisa...
