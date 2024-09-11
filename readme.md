@@ -77,3 +77,7 @@ attribute import di module.. kita udh melakukan shared module dengan import User
 misal provider d module A ga bisa di pake di module B, kalo mau mau di shanring harus
 di export di @Module({ export: []) A nya baru bisa di pake di module B atau lainnya
 hanya yang di export saja yang bisa...
+
+**Database** pake prisma... `npm install -D prisma` dan `npx prisma init`
+
+bikin module nya buat prisma `nest g mo prisma` abis itu `nest g s prisma prisma`
