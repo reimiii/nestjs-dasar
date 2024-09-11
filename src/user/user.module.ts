@@ -6,6 +6,7 @@ import {
   MongoDBConnection,
   MySQLConnection,
 } from './connection/connection';
+import { mailService, MailService } from './mail/mail.service';
 import * as process from 'node:process';
 
 @Module({
@@ -16,6 +17,10 @@ import * as process from 'node:process';
       provide: Connection,
       useClass:
         process.env.DATABASE == 'mysql' ? MySQLConnection : MongoDBConnection,
+    },
+    {
+      provide: MailService,
+      useValue: mailService,
     },
   ],
 })

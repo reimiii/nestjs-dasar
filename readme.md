@@ -46,3 +46,7 @@ membuat custom provider... sebelum nya pake standar provider...
 class provider misal bikin connection provider tapi ada 2 class dan suatu saat penengn pake salah satu nya tampa nge ganti code nya...
 
 generate nya pake `nest generate provider connection user`
+
+value provider adalah membuat dependency dari value (object) yang sudah ada, misal punya sebuah object dan object tersebut mau di jadikan sebagai dependency provider, kita bisa gunakan value provider
+
+generate nya pake `nest g s mail user` misal aja kita pake library dan ga bisa pake @Injectable()
