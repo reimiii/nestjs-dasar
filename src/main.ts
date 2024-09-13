@@ -4,6 +4,7 @@ import * as cookieParser from 'cookie-parser';
 import * as mustacheExpress from 'mustache-express';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
+import { ValidationFilter } from './validation/validation.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -15,6 +16,8 @@ async function bootstrap() {
   app.set('views', `${__dirname}/../views`);
   app.set('view engine', 'html');
   app.engine('html', mustacheExpress());
+
+  app.useGlobalFilters(new ValidationFilter());
 
   const config = app.get(ConfigService);
   const port = config.get('PORT');

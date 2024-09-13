@@ -89,3 +89,7 @@ logger pake winstone skip aja dulu... keknya...
 **middleware** sama kayak di express klo mau buat manual pake NestMiddleware 
 tinggal di exstend aja di class nya atau `nest generate middleware log path`
 registrasi kan middleware harus membuat module turunan dari interface nest module
+
+**exception filter** mengubah default pesan error json response bisa di generate jg
+`nest generate filter validation` dan sama kayak middleware harus di registrasikan dulu baru bisa jalan
+nest jg punya http exception biar hga usah buat filter exception
