@@ -103,3 +103,10 @@ transform tipe data dan di olah atau di throw sebelum masuk ke controller
 
 global pipe, harus hati hati
 
+
+interceptor, hampir mirip seperti middleware, yang membedakan interceptor bisa mengubah
+response yang di kirim kan dari controller, jadi bisa ngubah response sebelum
+di kirim ke client
+untuk buatnya bisa pake interface dari NestInterceptor atau `nest generate interceptor name path`
+untuk pake nya bisa pakai @UseInterceptor() di controller method atau class, klo buat global pastikan aman
+

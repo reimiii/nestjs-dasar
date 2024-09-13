@@ -15,6 +15,7 @@ import {
   Req,
   Res,
   UseFilters,
+  UseInterceptors,
   UsePipes,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
@@ -27,6 +28,7 @@ import { User } from '@prisma/client';
 import { LoginRequest, loginRequestValidation } from '../../model/login.model';
 import { ValidationFilter } from '../../validation/validation.filter';
 import { ValidationPipe } from '../../validation/validation.pipe';
+import { TimeInterceptor } from '../../time/time.interceptor';
 
 @Controller('/api/users')
 export class UserController {
@@ -45,12 +47,16 @@ export class UserController {
   @UseFilters(ValidationFilter)
   @UsePipes(new ValidationPipe(loginRequestValidation))
   @Post('login')
+  @Header('Content-Type', 'application/json')
+  @UseInterceptors(TimeInterceptor)
   login(
     // @Body(new ValidationPipe(loginRequestValidation)) request: LoginRequest,
     @Query('name') name: string,
     @Body() request: LoginRequest,
-  ): string {
-    return `hello ${request.username}`;
+  ) {
+    return {
+      data: `hello ${request.username}`,
+    };
   }
 
   @Get('create')
