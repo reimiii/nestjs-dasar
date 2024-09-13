@@ -18,6 +18,7 @@ async function bootstrap() {
   app.engine('html', mustacheExpress());
 
   app.useGlobalFilters(new ValidationFilter());
+  // app.useGlobalPipes()
 
   const config = app.get(ConfigService);
   const port = config.get('PORT');

@@ -93,3 +93,13 @@ registrasi kan middleware harus membuat module turunan dari interface nest modul
 **exception filter** mengubah default pesan error json response bisa di generate jg
 `nest generate filter validation` dan sama kayak middleware harus di registrasikan dulu baru bisa jalan
 nest jg punya http exception biar hga usah buat filter exception
+
+
+**pipe** untuk mengubah tipe data yang dikirim mejadi tipe data yang sesuai dan udh ada Buildin PIPE di nestjs udh di sediakan, perubahan tipe data sebelum
+di kirim ke controller, pipe bisa di gunakan di: @Query(), @Body(), @Param()
+bisa juga generate pipe sendiri pake `nest generate pipe name path`
+atau bisa buat class dengan turunan PipeTransform, sangat powerfull sekali pipe ini buat
+transform tipe data dan di olah atau di throw sebelum masuk ke controller
+
+global pipe, harus hati hati
+

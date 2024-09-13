@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Get,
   Header,
@@ -6,12 +7,15 @@ import {
   HttpException,
   HttpRedirectResponse,
   Inject,
+  Param,
+  ParseIntPipe,
   Post,
   Query,
   Redirect,
   Req,
   Res,
   UseFilters,
+  UsePipes,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { UserService } from './user.service';
@@ -20,7 +24,9 @@ import { MailService } from '../mail/mail.service';
 import { UserRepository } from '../user-repository/user-repository';
 import { MemberService } from '../member/member.service';
 import { User } from '@prisma/client';
+import { LoginRequest, loginRequestValidation } from '../../model/login.model';
 import { ValidationFilter } from '../../validation/validation.filter';
+import { ValidationPipe } from '../../validation/validation.pipe';
 
 @Controller('/api/users')
 export class UserController {
@@ -35,6 +41,17 @@ export class UserController {
     private userRepository: UserRepository,
     private memberService: MemberService,
   ) {}
+
+  @UseFilters(ValidationFilter)
+  @UsePipes(new ValidationPipe(loginRequestValidation))
+  @Post('login')
+  login(
+    // @Body(new ValidationPipe(loginRequestValidation)) request: LoginRequest,
+    @Query('name') name: string,
+    @Body() request: LoginRequest,
+  ): string {
+    return `hello ${request.username}`;
+  }
 
   @Get('create')
   async create(
@@ -115,10 +132,11 @@ export class UserController {
     return `hello ${name ?? 'Guest'} from ${location || 'ID'}`;
   }
 
-  // @Get('/i/:idUser') // get params id
-  // getByIdRecommend(@Param('idUser') id: string): string {
-  //   return `GET by ID Recommended: ${id}`;
-  // }
+  @Get('/i/:idUser') // get params id
+  getByIdRecommend(@Param('idUser', ParseIntPipe) id: number): string {
+    console.info(5 * id);
+    return `GET by ID Recommended: ${id}`;
+  }
 
   @Get('/hello') // get query params name
   getQueryNotRecommend(@Req() request: Request): string {
