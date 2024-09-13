@@ -85,3 +85,7 @@ bikin module nya buat prisma `nest g mo prisma` abis itu `nest g s prisma prisma
 logger pake winstone skip aja dulu... keknya...
 
 **dynamic module** bikin dynamic module buat validation service
+
+**middleware** sama kayak di express klo mau buat manual pake NestMiddleware 
+tinggal di exstend aja di class nya atau `nest generate middleware log path`
+registrasi kan middleware harus membuat module turunan dari interface nest module
